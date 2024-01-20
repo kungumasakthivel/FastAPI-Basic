@@ -28,6 +28,11 @@ class Student(BaseModel):
     age: int
     email: str
 
+class UpdateStudent(BaseModel):
+    name: Optional[str] = None
+    age: Optional[int] = None
+    email: Optional[str] = None
+
 
 @app.get('/')
 def index():
@@ -60,4 +65,21 @@ def create_student(student_id : int, student : Student):
     if student_id in students:
         return {'Error': 'Student Id already exists'}
     students[student_id] = student
+    return students[student_id]
+
+
+@app.put('/edit-details/{student_id}')
+def edit_details(student_id : int, student : UpdateStudent):
+    if student_id not in students:
+        return {"Student_id": "Not found in students object"}
+    
+    if student.name != None:
+        students[student_id].name = student.name
+    
+    if student.age != None:
+        students[student_id].age = student.age
+    
+    if student.email != None:
+        students[student_id].email = student.email
+    
     return students[student_id]

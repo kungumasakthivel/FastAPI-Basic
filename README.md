@@ -63,6 +63,41 @@
 - In this endpoint we get JSON data in request body so we can't see data in URL we can only see new student_id were this id need to be unique which means this student_id should not be in students object.
 - `student: Student` in `create_student` endpoint method say that incoming request body data should match the Student class data type structure if not then incoming JSON data can't be inserted into students object.
 
+### Put Method
+
+- Put method is used to update existing data in our students object, it just requires student_id and JSON data to update particular student
+- But here we are not going to update entier data of particular student, but we update a specific category of student like updating only name or age or email
+- So here we use another BaseModel to verify incoming JSON data is in its specific data type or not
+
+  ```python
+  class UpdateStudent(BaseModel):
+      name: Optional[str] = None
+      age: Optional[int] = None
+      email: Optional[str] = None
+
+  ```
+- In put method endpoint we use this UpdateStudent class to verify our incoming JSON data of a particular student that already exist in students object
+- In UpdateStudent class we give `None` as default data type, because while updating the existing data we no need to update every key : value pair instead we just need to update particular pair of data only
+
+  ```python
+  @app.put('/edit-details/{student_id}')
+  def edit_details(student_id : int, student : UpdateStudent):
+      if student_id not in students:
+          return {"Student_id": "Not found in students object"}
+
+      if student.name != None:
+          students[student_id].name = student.name
+
+      if student.age != None:
+          students[student_id].age = student.age
+
+      if student.email != None:
+          students[student_id].email = student.email
+
+      return students[student_id]
+  ```
+- In the above code we just try to update particular *JSON* data in which key's value needs to be updated if it have `None` data type it will not going to be update else it will update the existing value to new value
+
 ### Common Mistake
 
 1. Use  **/**  in endpoint path starting character to specify any path to endpoint
