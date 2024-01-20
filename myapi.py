@@ -38,3 +38,11 @@ def student(name: Optional[str] = None):
         if students[student_id]["name"] == name:
             return students[student_id]
     return {'Data': 'Not found :<'}
+
+
+@app.get('/student/{student_id}')
+def student(student_id: int, name: Optional[str] = None):
+    if name == None:
+        return students[student_id]
+    else:
+        return students[student_id]['name'] == name 

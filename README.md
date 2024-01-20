@@ -31,6 +31,13 @@
 - Enclose the parameter str within Optional because the given str parameter for that endpoint is optional in that endpoint
 - We cannot place optional parameter before required parameter in endpoint function
 
+### Combining Path & Query parameters
+
+- Here we have both path and query parameter in endpoint function
+- Path parameter value is obtained from path **URL** and query parameter value is obtained from query phase in **URL** but this query is optional
+- But the purpose of this endpoint is to handle both functions
+- Here both ***path and query*** parameters are required to fetch data from server
+
 ### Common Mistake
 
 1. Use  **/**  in endpoint path starting character to specify any path to endpoint
