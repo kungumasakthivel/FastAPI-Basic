@@ -38,6 +38,31 @@
 - But the purpose of this endpoint is to handle both functions
 - Here both ***path and query*** parameters are required to fetch data from server
 
+### Request Body & Post Method
+
+- The request body contains new JSON object that contains data of new user to insert in students object
+- Here we use pydantic library to verify our incoming data is in it original data type structure or not
+
+  ```python
+  from pydantic import BaseModel
+  class Student(BaseModel):
+      name: str
+      age: int
+      email: str
+  ```
+- Using this **BaseModel** parent class we create sub-class, so that we can verify incoming JSON data is in that particular data type or not
+
+  ```python
+  @app.post('/create-student/{student_id}')
+  def create_student(student_id : int, student : Student):
+      if student_id in students:
+          return {'Error': 'Student Id already exists'}
+      students[student_id] = student
+      return students[student_id]
+  ```
+- In this endpoint we get JSON data in request body so we can't see data in URL we can only see new student_id were this id need to be unique which means this student_id should not be in students object.
+- `student: Student` in `create_student` endpoint method say that incoming request body data should match the Student class data type structure if not then incoming JSON data can't be inserted into students object.
+
 ### Common Mistake
 
 1. Use  **/**  in endpoint path starting character to specify any path to endpoint
