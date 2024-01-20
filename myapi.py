@@ -83,3 +83,16 @@ def edit_details(student_id : int, student : UpdateStudent):
         students[student_id].email = student.email
     
     return students[student_id]
+
+
+@app.delete('/delete-student/{student_id}')
+def delete_student(student_id: int):
+    if student_id not in students:
+        return {'Error': 'Student not found'}
+    del students[student_id]
+    return {'Success': f'student with student id {student_id} deleted successfully'}
+
+
+@app.get('/all-students')
+def get_all_students():
+    return students
