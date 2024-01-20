@@ -1,4 +1,4 @@
-### To run fastapi server using uvicorn server package
+## To run fastapi server using uvicorn server package
 
 ---
 
@@ -16,7 +16,7 @@ To run fastapi file
 - If any changes happens and saved in the fastapi file `--reload` will automatically updates the changes into your server
 
 
-### Basic API operation
+## Basic API operation
 
 ---
 
@@ -26,7 +26,7 @@ To run fastapi file
 - DELETE
 
 
-### Automatic Documentation by FastAPI
+## Automatic Documentation by FastAPI
 
 ---
 
@@ -36,7 +36,7 @@ To run fastapi file
 - `path_name/docs` to open fastapi auto generated **docs**
 
 
-### Path Parameters
+## Path Parameters
 
 ---
 
@@ -44,7 +44,7 @@ To run fastapi file
 - Path parameter is like `.com/path_name/sub_path` is path parameters in URL
 
 
-### Query Parameters
+## Query Parameters
 
 ---
 
@@ -57,7 +57,7 @@ To run fastapi file
 - We cannot place optional parameter before required parameter in endpoint function
 
 
-### Combining Path & Query parameters
+## Combining Path & Query parameters
 
 ---
 
@@ -67,7 +67,7 @@ To run fastapi file
 - Here both ***path and query*** parameters are required to fetch data from server
 
 
-### Post Method & Request Body
+## Post Method & Request Body
 
 ---
 
@@ -95,7 +95,7 @@ To run fastapi file
 - `student: Student` in `create_student` endpoint method say that incoming request body data should match the Student class data type structure if not then incoming JSON data can't be inserted into students object.
 
 
-### Put Method
+## Put Method
 
 ---
 
@@ -133,7 +133,7 @@ To run fastapi file
 - In the above code we just try to update particular *JSON* data in which key's value needs to be updated if it have `None` data type it will not going to be update else it will update the existing value to new value
 
 
-### Delete Method
+## Delete Method
 
 ---
 
@@ -150,7 +150,7 @@ To run fastapi file
   ```
 - This will delete the particular student data from his/her student_id
 
-### Common Mistake
+## Common Mistake
 
 ---
 
