@@ -1,6 +1,5 @@
 ## To run fastapi server using uvicorn server package
 
----
 
 To run fastapi file 
 
@@ -18,7 +17,6 @@ To run fastapi file
 
 ## Basic API operation
 
----
 
 - GET
 - POST
@@ -28,7 +26,6 @@ To run fastapi file
 
 ## Automatic Documentation by FastAPI
 
----
 
 - FastAPI creates automatic documentation for particular endpoint
 - This helps to know about our api endpoint function
@@ -38,7 +35,6 @@ To run fastapi file
 
 ## Path Parameters
 
----
 
 - In path parameter we have two inputh parameter **'path'** and '**query'**
 - Path parameter is like `.com/path_name/sub_path` is path parameters in URL
@@ -46,7 +42,6 @@ To run fastapi file
 
 ## Query Parameters
 
----
 
 - Query parameter is similar to path parameter
 - This query is used to **pass value** into *URL*
@@ -59,7 +54,6 @@ To run fastapi file
 
 ## Combining Path & Query parameters
 
----
 
 - Here we have both path and query parameter in endpoint function
 - Path parameter value is obtained from path **URL** and query parameter value is obtained from query phase in **URL** but this query is optional
@@ -69,7 +63,6 @@ To run fastapi file
 
 ## Post Method & Request Body
 
----
 
 - The request body contains new JSON object that contains data of new user to insert in students object
 - Here we use pydantic library to verify our incoming data is in it original data type structure or not
@@ -97,7 +90,6 @@ To run fastapi file
 
 ## Put Method
 
----
 
 - Put method is used to update existing data in our students object, it just requires student_id and JSON data to update particular student
 - But here we are not going to update entier data of particular student, but we update a specific category of student like updating only name or age or email
@@ -135,7 +127,6 @@ To run fastapi file
 
 ## Delete Method
 
----
 
 - Delete method is used to delete the particular student with student_id from students object
 - Here we use `app.delete('/path/{id})` to mention particular id to delete data from student object
@@ -152,7 +143,6 @@ To run fastapi file
 
 ## Common Mistake
 
----
 
 1. Use  **/**  in endpoint path starting character to specify any path to endpoint
 2. Use decerator `@app.method_name` before writing any endpoint
