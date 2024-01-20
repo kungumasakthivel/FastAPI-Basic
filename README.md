@@ -23,12 +23,13 @@
 
 ### Query Parameters
 
-- 
-
-
-
-
-
+- Query parameter is similar to path parameter
+- This query is used to **pass value** into *URL*
+- Query parameter is like `.com/path_name?name=some_name`
+- Difference between path and query parameter is the endpoint parameter not needed in query parameter
+- Always give query parameter default value as  `None`  type as default value to avoid *required parameter while testing the API in docs mode
+- Enclose the parameter str within Optional because the given str parameter for that endpoint is optional in that endpoint
+- We cannot place optional parameter before required parameter in endpoint function
 
 ### Common Mistake
 
