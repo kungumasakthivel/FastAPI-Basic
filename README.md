@@ -1,6 +1,17 @@
 ### To run fastapi server using uvicorn server package
 
-`uvicorn filename:fastapi_instance_name --reload`
+To run fastapi file 
+
+- Open terminal in your root folder
+- Then use  `uvicorn filename:fastapi_instance_name --reload` this command will run you fastapi server
+- The `filename` describes fastapi file name and `fastapi_instance_name` describes the FastAPI instance in your fastapi file
+
+  ```python
+  from fastapi import FastAPI
+  app = FastAPI()
+  ```
+- For example if your file name is fastapi.py then to start server you should type `uvicorn fastapi:app --reload`
+- If any changes happens and saved in the fastapi file `--reload` will automatically updates the changes into your server
 
 ### Basic API operation
 
