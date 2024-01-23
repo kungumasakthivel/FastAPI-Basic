@@ -134,3 +134,4 @@ To run fastapi file
 
 1. Use  **/**  in endpoint path starting character to specify any path to endpoint
 2. Use decerator `@app.method_name` before writing any endpoint
+3. Use apprppriate CRED operation to make changes in data
